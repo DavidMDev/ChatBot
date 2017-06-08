@@ -1,0 +1,28 @@
+<div  class="container" *ngIf="address">
+
+  <div>
+    <label>id: </label>{{address.id}}</div>
+  <div>
+    <label>postcode: </label>
+    <input [(ngModel)]="address.postcode" placeholder="postcode" />
+  </div>
+  <div>
+    <label>streetName: </label>
+    <input [(ngModel)]="address.streetName" placeholder="streetName" />
+  </div>
+  <div>
+    <label>addressDetails: </label>
+    <input [(ngModel)]="address.addressDetails" placeholder="address details" />
+  </div>
+  <div>
+    <label>houseNumber: </label>
+    <input [(ngModel)]="address.houseNumber" placeholder="house number" />
+  </div>
+  <div>
+    <label>city: </label>
+    <input [(ngModel)]="address.city" placeholder="city" />
+  </div>
+
+  <button class="btn btn-default" (click)="goBack()">Back</button>
+  <button class="btn btn-default" (click)="save()">Save</button>
+</div>

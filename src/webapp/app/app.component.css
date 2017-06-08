@@ -1,0 +1,17 @@
+.activeLink {
+  cursor: pointer;
+}
+
+.mainApp{
+  padding-top:60px;
+}
+/* fix padding under menu after resize */
+@media screen and (max-width: 767px) {
+  .mainApp { padding-top: 60px; }
+}
+@media screen and (min-width:768px) and (max-width: 991px) {
+  .mainApp { padding-top: 60px; }
+}
+@media screen and (min-width: 992px) {
+  .mainApp { padding-top: 60px; }
+}

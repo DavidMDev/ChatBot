@@ -1,0 +1,31 @@
+<div class="container">
+  <div *ngIf="user">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>{{user.username}}</h3>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">Email : {{user.email}}</li>
+            <li class="list-group-item">First name : {{user.firstName}}</li>
+            <li class="list-group-item">Last name : {{user.lastName}}</li>
+            <li class="list-group-item">Roles : {{user.roles}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+          <button class="btn btn-primary" (click)="phonesMenuEnable()">Manage phones</button>
+          <button class="btn btn-primary" (click)="addressMenuEnable()">Manage addresses</button>
+          <button class="btn btn-primary" (click)="editProfile()">Manage profile</button>
+    </div>
+    <div *ngIf="phoneMenu" class="row">
+    <phone-manager></phone-manager>
+    </div>
+
+    <div *ngIf="addressMenu" class="row">
+      <address-manager></address-manager>
+    </div>
+  </div>
+</div>

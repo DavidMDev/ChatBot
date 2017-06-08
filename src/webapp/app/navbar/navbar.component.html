@@ -1,0 +1,25 @@
+<div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button"
+              class="navbar-toggle collapsed"
+              (click)="toggleState()">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Home</a>
+    </div>
+    <div class="collapse navbar-collapse"
+         [ngClass]="{ 'in': isIn }">
+      <ul class="nav navbar-nav" (click)="toggleState()">
+        <li *ngIf="isLogged()"><a routerLink="/chat" routerLinkActive="active">Chat</a></li>
+        <li *ngIf="!isLogged()"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li *ngIf="!isLogged()"><a routerLink="/signup" routerLinkActive="active">Sign up</a></li>
+        <li *ngIf="isLogged()"><a [routerLink]="['profile', 0]" routerLinkActive="active">My profile</a></li>
+        <li *ngIf="isLogged()"><a class="activeLink" (click)="disconnect()">Log out</a></li>
+      </ul>
+    </div>
+</nav>
+</div>

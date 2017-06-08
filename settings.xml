@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<!-- Routes -->
+	<!-- * : any variable, ** : any sub directory or variables -->
+	<!-- Routes must end with variables (No routes like "/people/*/groups/*") -->
+	<routes>
+		<route>
+			<url>/websocket</url>
+			<method>GET</method>
+			<roles>NONE</roles>
+		</route>
+		<!-- api routes -->
+		<!-- user routes -->
+		<route>
+			<url>/api/users/</url>
+			<method>POST</method>
+			<roles>NONE</roles>
+		</route>
+		<route>
+			<url>/api/users/*</url>
+			<method>DELETE</method>
+			<roles>ADMIN</roles>
+		</route>
+		<route>
+			<url>/api/users/</url>
+			<method>PUT</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/users/</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/users/*</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/me/</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/me/edit</url>
+			<method>PUT</method>
+			<roles>USER</roles>
+		</route>
+		<!-- address routes -->
+		<route>
+			<url>/api/addresses/</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/addresses/*</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/addresses/</url>
+			<method>POST</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/addresses/*</url>
+			<method>DELETE</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/addresses/</url>
+			<method>PUT</method>
+			<roles>USER</roles>
+		</route>
+		<!-- telephone routes -->
+		<route>
+			<url>/api/telephones/</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/telephones/*</url>
+			<method>GET</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/telephones/</url>
+			<method>POST</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/telephones/*</url>
+			<method>DELETE</method>
+			<roles>USER</roles>
+		</route>
+		<route>
+			<url>/api/telephones/</url>
+			<method>PUT</method>
+			<roles>USER</roles>
+		</route>
+		<!-- public routes -->
+		<!-- Do not touch these -->
+		<route>
+			<url>/</url>
+			<method>GET</method>
+			<roles>NONE</roles>
+		</route>
+		<route>
+			<url>/public/**</url>
+			<method>GET</method>
+			<roles>NONE</roles>
+		</route>
+	</routes>
+</configuration>

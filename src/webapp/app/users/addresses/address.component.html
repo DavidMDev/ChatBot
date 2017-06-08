@@ -1,0 +1,83 @@
+<div class="row" *ngIf="addresses.length > 0">
+  <div class="col-md-6">
+    <div class="panel-heading">
+      <h4>Addresses</h4>
+    </div>
+    <div class="panel panel-default">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let address of addresses">
+          <button class="btn btn-default" (click)="delete(address);"><span class="glyphicon glyphicon-remove"></span>
+          </button>
+          <button class="btn btn-default" (click)="goto(address)"><span class="glyphicon glyphicon-edit"></span></button>
+          <p>{{address.houseNumber}}</p>
+          <p>{{address.streetName}}</p>
+          <p *ngIf="address.addressDetails">{{address.addressDetails}}</p>
+          <p>{{address.postcode}}</p>
+          <p>{{address.city}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div>
+  <form class="form-horizontal">
+    <fieldset>
+      <!-- Form Name -->
+      <legend>Add address</legend>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="postcode">postcode</label>
+        <div class="col-md-4 pull-left">
+          <input id="postcode" name="postcode" type="text" placeholder="postcode" class="form-control input-md"
+                 required="true" #postcode/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="streetName">streetName</label>
+        <div class="col-md-4 pull-left">
+          <input id="streetName" name="streetName" type="text" placeholder="streetName" class="form-control input-md"
+                 required="true" #streetName/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="addressDetails">addressDetails</label>
+        <div class="col-md-4 pull-left">
+          <input id="addressDetails" name="addressDetails" type="text" placeholder="addressDetails"
+                 class="form-control input-md" required="true" #addressDetails/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="houseNumber">houseNumber</label>
+        <div class="col-md-4 pull-left">
+          <input id="houseNumber" name="houseNumber" type="text" placeholder="houseNumber" class="form-control input-md"
+                 required="true" #houseNumber/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="city">city</label>
+        <div class="col-md-4 pull-left">
+          <input id="city" name="city" type="text" placeholder="city" class="form-control input-md" required="true"
+                 #city/>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+  <button class="btn btn-primary"
+          (click)="add(
+      postcode.value,
+      streetName.value,
+      addressDetails.value,
+      houseNumber.value,
+      city.value); postcode.value = '';
+      streetName.value = '';
+      addressDetails.value = '';
+      houseNumber.value = '';
+      city.value = '';">
+    Add
+  </button>
+</div>

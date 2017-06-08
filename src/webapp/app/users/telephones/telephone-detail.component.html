@@ -1,0 +1,15 @@
+<div  class="container" *ngIf="telephone">
+
+  <div>
+    <label>id: </label>{{telephone.id}}</div>
+  <div>
+    <label>number: </label>
+    <input [(ngModel)]="telephone.number" placeholder="number" />
+  </div>
+  <div>
+    <label>type: </label>
+    <input [(ngModel)]="telephone.type" placeholder="type" />
+  </div>
+  <button class="btn btn-default" (click)="goBack()">Back</button>
+  <button class="btn btn-default" (click)="save()">Save</button>
+</div>

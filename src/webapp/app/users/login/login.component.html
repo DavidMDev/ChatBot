@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="login($event)" class="form-horizontal">
+    <fieldset>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="username">Username</label>
+        <div class="col-md-4 pull-left">
+          <input id="username" name="username" formControlName="username" type="text" placeholder="Username" class="form-control input-md"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label pull-left" for="password">password</label>
+        <div class="col-md-4 pull-left">
+          <input id="password" name="password" formControlName="password" type="password" placeholder="password" class="form-control input-md"/>
+        </div>
+      </div>
+
+    </fieldset>
+    <button  class="btn btn-primary"
+            type="submit">
+      Submit
+    </button>
+  </form>
+
+
+</div>
